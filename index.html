@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- header -->
+        <!-- <div class="qc">
+            <img src="data:image/jpeg;base64,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" alt="">
+        </div> -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://static-znews.zadn.vn/images/logo-zing-home.svg" alt="">
+                    <p>TRI THỨC TRỰC TUYẾN</p>
+                </div>
+                <ul>
+                    <li>Xuất bản</li>
+                    <li>Thời sự</li>
+                    <li>Thế giới</li>
+                    <li>Kinh doanh</li>
+                    <li>Công nghệ</li>
+                    <li>Sức khoẻ</li>
+                    <li>Thể thao</li>
+                    <li>Giải trí</li>
+                    <li>Đời sống</li>
+                    <li>Du lịch</li>
+                    <li class="more">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                </ul>
+                <div class="icon-header">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-circle-user"></i>
+                </div>
+            </div>
+        </div>
+        <!-- main -->
+        <div class="main">
+            <!-- navigation -->
+            <div class="navigation">
+                <ul class="tittle">
+                    <li>Zing từ Ukraine</li>
+                    <li>Nga tấn công Ukaraine</li>
+                    <li>Số liệu Covid-19</li>
+                    <li>Khi trẻ em mắc Covid-19</li>
+                </ul>
+                <div class="weather">
+                    <ul>
+                        <li>
+                            <p>Đà Nẵng</p>
+                            <p>23°C / 23-29°C </p>
+                            <img src="https://static-znews.zadn.vn/images/icons/weather/v2/hazy.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- mainleft -->
+            <div class="boxmain">
+                <div class="main-left">
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/ovhunah/2022_03_26/z3291162269150_da261c69ff9199150225fdade84c1179.jpg"
+                                alt="">
+                            <p>Ghi chú của hành khách trên máy bay gặp nạn gây xúc động ở Trung Quốc</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/mfnuy/2022_03_26/skysports_dominic_berardi_italy_5718069_1.jpg"
+                                alt="">
+                            <p>Tia sáng cho bóng đá Italy</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/ofh_hmzpgazs/2022_03_26/vn.jpg" alt="">
+                            <p>Xe máy lao xuống cống, 3 nữ sinh tử vong</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/lce_jwqqc/2022_03_25/275447438_792584851717859_6924790001687431164_n_1_1.jpg"
+                                alt="">
+                            <p>Chú rể bật khóc, nắm chặt tay bố trong đám cưới</p>
+                        </li>
+                        <li class="delete">
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/rohuoct/2022_03_26/U4YGV6YJINILLJTC5OD6YITB24.jpg"
+                                alt="">
+                            <p>Mỹ ra tay hỗ trợ khí đốt cho châu Âu</p>
+                        </li>
+                    </ul>
+
+
+                </div>
+                <!-- mainright -->
+                <div class="main-right">
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w960/Uploaded/afsiy/2022_03_25/Pionyang_confirms_the_launch_of_the_new_Hwasong_17_missile_and_1280x720.jpg"
+                                alt="">
+                            <h1>ICBM mới của Triều Tiên mạnh cỡ nào?</h1>
+                            <p>Triều Tiên xác nhận thử nghiệm thành công tên lửa đạn đạo xuyên lục địa (ICBM) loại mới.
+                                Điều này đánh dấu lần đầu tiên Bình Nhưỡng phóng một vũ khí uy lực như vậy kể từ năm
+                                2017.</p>
+                            <ul>
+                                <li>
+                                    <p> Mỹ tung loạt trừng phạt lên Nga, Trung Quốc, Triều Tiên</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w480/Uploaded/qxjwpprjv/2022_03_15/thumb.jpg" alt="">
+                            <div class="content-sub">
+                                <span><i class="fa-solid fa-images"></i></span>
+                                <h4> Cuộc sống người dân ở chung cư cần di dời khẩn cấp tại TP.HCM</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w480/Uploaded/qnuozb/2022_03_25/0BFCF524_CF46_43F0_B913_3A26E21EE664_1_201_a.jpeg"
+                                alt="">
+                            <div class="content-sub">
+                                <span><i class="fa-solid fa-images"></i></span>
+                                <h4> Những người Ukraine đi tàu ngược về chiến trường Kyiv</h4>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+
+            </div>
+            <!-- multimedia -->
+
+            <div class="multimedia">
+                <div class="multimedia-header">
+                    <h3>MULTIMEDIA</h3>
+                    <ul>
+                        <li>VIDEO</li>
+                        <li>LONGFORM</li>
+                        <li>VOICES</li>
+                        <li>LENS</li>
+                        <li>STORY</li>
+                        <li>QUIZZ</li>
+                    </ul>
+                </div>
+
+                <div class="multimedia-content">
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w860/Uploaded/mdf_zremxw/2022_03_25/13z_abraham_ramsdale_a.jpg"
+                                alt="">
+                            <h2>Đội hình tân binh hay nhất mùa 2021/22</h2>
+                            <p>Tammy Abraham là một trong những tân binh thi đấu nổi bật nhất tại 5 giải vô địch quốc
+                                gia hàng đầu châu Âu mùa này.</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w860/Uploaded/mdf_zremxw/2022_03_25/13z_abraham_ramsdale_a.jpg"
+                                alt="">
+                            <h3>Rolls-Royce Phantom phiên bản carbon độc nhất thế giới</h3>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w860/Uploaded/mdf_zremxw/2022_03_25/13z_abraham_ramsdale_a.jpg"
+                                alt="">
+                            <h3>Rolls-Royce Phantom phiên bản carbon độc nhất thế giới</h3>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w860/Uploaded/mdf_zremxw/2022_03_25/13z_abraham_ramsdale_a.jpg"
+                                alt="">
+                            <h3>Rolls-Royce Phantom phiên bản carbon độc nhất thế giới</h3>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w860/Uploaded/mdf_zremxw/2022_03_25/13z_abraham_ramsdale_a.jpg"
+                                alt="">
+                            <h3>Rolls-Royce Phantom phiên bản carbon độc nhất thế giới</h3>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+
+            <!-- Books -->
+            <div class="book-father">
+                <div class="book">
+                    <h3>BOOKS</h3>
+                </div>
+                <div class="crollbar">
+
+                    <div class="book-slide">
+                        <ul>
+                            <li>
+                                <img src="https://znews-photo.zadn.vn/w360/Uploaded/jopobun/2022_03_25/thumb.jpg"
+                                    alt="">
+                                <h5>Xếp hàng hơn 10h để mua sách 'Chú thuật hồi chiến'</h5>
+                            </li>
+                            <li>
+                                <img src="https://znews-photo.zadn.vn/w360/Uploaded/jopobun/2022_03_25/thumb.jpg"
+                                    alt="">
+                                <h5>Xếp hàng hơn 10h để mua sách 'Chú thuật hồi chiến'</h5>
+                            </li>
+                            <li>
+                                <img src="https://znews-photo.zadn.vn/w360/Uploaded/jopobun/2022_03_25/thumb.jpg"
+                                    alt="">
+                                <h5>Xếp hàng hơn 10h để mua sách 'Chú thuật hồi chiến'</h5>
+                            </li>
+                            <li>
+                                <img src="https://znews-photo.zadn.vn/w360/Uploaded/jopobun/2022_03_25/thumb.jpg"
+                                    alt="">
+                                <h5>Xếp hàng hơn 10h để mua sách 'Chú thuật hồi chiến'</h5>
+                            </li>
+                            <li>
+                                <img src="https://znews-photo.zadn.vn/w360/Uploaded/jopobun/2022_03_25/thumb.jpg"
+                                    alt="">
+                                <h5>Xếp hàng hơn 10h để mua sách 'Chú thuật hồi chiến'</h5>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- menu new  -->
+            <div class="menunew">
+                <!-- menu new left -->
+                <div class="menunew-left">
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/ngotgs/2022_03_26/a5_jlrc.jpg" alt="">
+                            <h2>Hổ nặng hơn 200 kg trên ôtô</h2>
+                            <p>Mến cùng đồng bọn khai vận chuyển cá thể hổ từ Nghệ An đi Lai Châu để tiêu thụ với giá
+                                615 triệu đồng.</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/ngotgs/2022_03_26/a5_jlrc.jpg" alt="">
+                            <h2>Hổ nặng hơn 200 kg trên ôtô</h2>
+                            <p>Mến cùng đồng bọn khai vận chuyển cá thể hổ từ Nghệ An đi Lai Châu để tiêu thụ với giá
+                                615 triệu đồng.</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/ngotgs/2022_03_26/a5_jlrc.jpg" alt="">
+                            <h2>Hổ nặng hơn 200 kg trên ôtô</h2>
+                            <p>Mến cùng đồng bọn khai vận chuyển cá thể hổ từ Nghệ An đi Lai Châu để tiêu thụ với giá
+                                615 triệu đồng.</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/ngotgs/2022_03_26/a5_jlrc.jpg" alt="">
+                            <h2>Hổ nặng hơn 200 kg trên ôtô</h2>
+                            <p>Mến cùng đồng bọn khai vận chuyển cá thể hổ từ Nghệ An đi Lai Châu để tiêu thụ với giá
+                                615 triệu đồng.</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/ngotgs/2022_03_26/a5_jlrc.jpg" alt="">
+                            <h2>Hổ nặng hơn 200 kg trên ôtô</h2>
+                            <p>Mến cùng đồng bọn khai vận chuyển cá thể hổ từ Nghệ An đi Lai Châu để tiêu thụ với giá
+                                615 triệu đồng.</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/ngotgs/2022_03_26/a5_jlrc.jpg" alt="">
+                            <h2>Hổ nặng hơn 200 kg trên ôtô</h2>
+                            <p>Mến cùng đồng bọn khai vận chuyển cá thể hổ từ Nghệ An đi Lai Châu để tiêu thụ với giá
+                                615 triệu đồng.</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/ngotgs/2022_03_26/a5_jlrc.jpg" alt="">
+                            <h2>Hổ nặng hơn 200 kg trên ôtô</h2>
+                            <p>Mến cùng đồng bọn khai vận chuyển cá thể hổ từ Nghệ An đi Lai Châu để tiêu thụ với giá
+                                615 triệu đồng.</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/ngotgs/2022_03_26/a5_jlrc.jpg" alt="">
+                            <h2>Hổ nặng hơn 200 kg trên ôtô</h2>
+                            <p>Mến cùng đồng bọn khai vận chuyển cá thể hổ từ Nghệ An đi Lai Châu để tiêu thụ với giá
+                                615 triệu đồng.</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/ngotgs/2022_03_26/a5_jlrc.jpg" alt="">
+                            <h2>Hổ nặng hơn 200 kg trên ôtô</h2>
+                            <p>Mến cùng đồng bọn khai vận chuyển cá thể hổ từ Nghệ An đi Lai Châu để tiêu thụ với giá
+                                615 triệu đồng.</p>
+                        </li>
+                    </ul>
+
+
+                </div>
+                <!-- menunew right -->
+                <div class="menunew-right">
+                    <div class="CK">
+                        <ul>
+                            <li>CHỨNG KHOÁN</li>
+                            <li>
+                                <h5>VNIndex</h5>
+                                <p>1498.5</p>
+                                <em>0.24</em>
+                            </li>
+                            <li>
+                                <h5>HNX-Index</h5>
+                                <p>461.75</p>
+                                <em>-1.05</em>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="TG">
+                        <ul>
+                            <li>TỶ GIÁ USD</li>
+                            <li>
+                                <h5>Mua vào</h5>
+                                <p>27,000đ</p>
+                            </li>
+                            <li>
+                                <h5>Bán ra</h5>
+                                <p>23,010đ</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- magazine -->
+        <div class="container-two">
+            <div class="magazine">
+                <div class="magazine-sub">
+                    <h3>MAGAZINE</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/860/Uploaded/ohunuai/2022_02_26/CFCA6FD1_87B8_4122_BE0B_94D328933E93.jpeg"
+                                alt="">
+                            <p>TL;DR</p>
+                            <div class="tittle">
+                                <p>Minh Hằng: 'Tôi chưa bao giờ gặp Quốc Trường cho đến khi đóng chung'</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/860/Uploaded/znanug/2022_03_21/bienchungnguyhiem.jpg"
+                                alt="">
+                            <p>TL;DR</p>
+                            <div class="tittle">
+                                <p>Biến chủng nCoV nguy hiểm nhất từ trước tới nay</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/860/Uploaded/orhwao_obvbhj3/2022_03_17/Thumb_4_.jpg"
+                                alt="">
+                            <p>TL;DR</p>
+                            <div class="tittle">
+                                <p>Micro-TESE: Kỹ thuật giúp nam giới vô tính không vô vọng</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/860/Uploaded/ohunuai/2022_02_24/My_9x.jpg" alt="">
+                            <p>TL;DR</p>
+                            <div class="tittle">
+                                <p>Diễm My 9x: Tôi hạnh phúc khi sống cùng gia đình bạn trai</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa-solid fa-camera-retro"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="category">
+                <div class="item">
+                    <h3>SÁCH HAY</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/xbfuooo/2022_03_24/sach.jpg" alt="">
+                            <p>Sách tinh gọn là hướng đi mới của ngành xuất bản</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/xbfuooo/2022_03_23/sach_giai_A.jpg"
+                                alt="">
+                            <p>Tăng cường ấn phẩm chất lượng, có 500.000 đến triệu bản sách bán chạy</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/oplukaa/2022_03_23/1934058_2246733a47612624c3f9aa07cef638f1.jpg"
+                                alt="">
+                            <p>Xuất bản tìm hướng mở rộng thị trường, ứng dụng công nghệ</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>SÁCH HAY</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/xbfuooo/2022_03_24/sach.jpg" alt="">
+                            <p>Sách tinh gọn là hướng đi mới của ngành xuất bản</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/xbfuooo/2022_03_23/sach_giai_A.jpg"
+                                alt="">
+                            <p>Tăng cường ấn phẩm chất lượng, có 500.000 đến triệu bản sách bán chạy</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/oplukaa/2022_03_23/1934058_2246733a47612624c3f9aa07cef638f1.jpg"
+                                alt="">
+                            <p>Xuất bản tìm hướng mở rộng thị trường, ứng dụng công nghệ</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>SÁCH HAY</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/xbfuooo/2022_03_24/sach.jpg" alt="">
+                            <p>Sách tinh gọn là hướng đi mới của ngành xuất bản</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/xbfuooo/2022_03_23/sach_giai_A.jpg"
+                                alt="">
+                            <p>Tăng cường ấn phẩm chất lượng, có 500.000 đến triệu bản sách bán chạy</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/oplukaa/2022_03_23/1934058_2246733a47612624c3f9aa07cef638f1.jpg"
+                                alt="">
+                            <p>Xuất bản tìm hướng mở rộng thị trường, ứng dụng công nghệ</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>SÁCH HAY</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/xbfuooo/2022_03_24/sach.jpg" alt="">
+                            <p>Sách tinh gọn là hướng đi mới của ngành xuất bản</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/xbfuooo/2022_03_23/sach_giai_A.jpg"
+                                alt="">
+                            <p>Tăng cường ấn phẩm chất lượng, có 500.000 đến triệu bản sách bán chạy</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/oplukaa/2022_03_23/1934058_2246733a47612624c3f9aa07cef638f1.jpg"
+                                alt="">
+                            <p>Xuất bản tìm hướng mở rộng thị trường, ứng dụng công nghệ</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>SÁCH HAY</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/xbfuooo/2022_03_24/sach.jpg" alt="">
+                            <p>Sách tinh gọn là hướng đi mới của ngành xuất bản</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/xbfuooo/2022_03_23/sach_giai_A.jpg"
+                                alt="">
+                            <p>Tăng cường ấn phẩm chất lượng, có 500.000 đến triệu bản sách bán chạy</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/oplukaa/2022_03_23/1934058_2246733a47612624c3f9aa07cef638f1.jpg"
+                                alt="">
+                            <p>Xuất bản tìm hướng mở rộng thị trường, ứng dụng công nghệ</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>SÁCH HAY</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/xbfuooo/2022_03_24/sach.jpg" alt="">
+                            <p>Sách tinh gọn là hướng đi mới của ngành xuất bản</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/xbfuooo/2022_03_23/sach_giai_A.jpg"
+                                alt="">
+                            <p>Tăng cường ấn phẩm chất lượng, có 500.000 đến triệu bản sách bán chạy</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/oplukaa/2022_03_23/1934058_2246733a47612624c3f9aa07cef638f1.jpg"
+                                alt="">
+                            <p>Xuất bản tìm hướng mở rộng thị trường, ứng dụng công nghệ</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>SÁCH HAY</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/xbfuooo/2022_03_24/sach.jpg" alt="">
+                            <p>Sách tinh gọn là hướng đi mới của ngành xuất bản</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/xbfuooo/2022_03_23/sach_giai_A.jpg"
+                                alt="">
+                            <p>Tăng cường ấn phẩm chất lượng, có 500.000 đến triệu bản sách bán chạy</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/oplukaa/2022_03_23/1934058_2246733a47612624c3f9aa07cef638f1.jpg"
+                                alt="">
+                            <p>Xuất bản tìm hướng mở rộng thị trường, ứng dụng công nghệ</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>SÁCH HAY</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/xbfuooo/2022_03_24/sach.jpg" alt="">
+                            <p>Sách tinh gọn là hướng đi mới của ngành xuất bản</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/xbfuooo/2022_03_23/sach_giai_A.jpg"
+                                alt="">
+                            <p>Tăng cường ấn phẩm chất lượng, có 500.000 đến triệu bản sách bán chạy</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/oplukaa/2022_03_23/1934058_2246733a47612624c3f9aa07cef638f1.jpg"
+                                alt="">
+                            <p>Xuất bản tìm hướng mở rộng thị trường, ứng dụng công nghệ</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lifestyle">
+                <div class="lifestyle-left">
+                    <h2>LIFESTYLE</h2>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w860/Uploaded/divspivp/2022_03_26/276326502_1987956798053096_2184515271437034340_n_1.jpg"
+                                alt="">
+                            <a href="">Các hoạt động thư giãn nhẹ nhàng ngày cuối tuần</a>
+                            <p>Một số hoạt động thư giãn nhẹ nhàng vào ngày chủ nhật có thể giúp bạn nạp thêm
+                                năng lượng cho tuần mới.</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/spivpdiv/2022_03_22/170782077_330092501956999_101803142935427898_n_min_1.jpeg"
+                                alt="">
+                            <p>3 quán lẩu cho cuộc hẹn cuối tuần ở TP.HCM</p>
+                        </li>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w360/Uploaded/mrndcqjwq/2022_03_15/thumb_gay_bvs_love.jpg"
+                                alt="">
+                            <p>Cậu bạn gay đi mua băng vệ sinh cho tôi</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lifestyle-right">
+                    <h2>NỔI BẬT 48 GIỜ</h2>
+                    <ul>
+                        <li>
+                            <p>BÓNG ĐÁ VIỆT NAM</p>
+                            <h3>Nỗi lo của U23 Việt Nam</h3>
+                        </li>
+                        <li>
+                            <p>BÓNG ĐÁ VIỆT NAM</p>
+                            <h3>Nỗi lo của U23 Việt Nam</h3>
+                        </li>
+                        <li>
+                            <p>BÓNG ĐÁ VIỆT NAM</p>
+                            <h3>Nỗi lo của U23 Việt Nam</h3>
+                        </li>
+                        <li>
+                            <p>BÓNG ĐÁ VIỆT NAM</p>
+                            <h3>Nỗi lo của U23 Việt Nam</h3>
+                        </li>
+                        <li>
+                            <p>BÓNG ĐÁ VIỆT NAM</p>
+                            <h3>Nỗi lo của U23 Việt Nam</h3>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="video">
+                <h2>VIDEO</h2>
+                <div class="video-left">
+                    <iframe width="100%" height="450" src="https://www.youtube.com/embed/_MM1MQgFjRM"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <ul>
+                        <li>
+                            <iframe width="120" height="80" src="https://www.youtube.com/embed/_MM1MQgFjRM"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <h4>HCV SEA Games 31 khó thoát khỏi tay LMHT Việt Nam</h4>
+                            <p>THỂ THAO</p>
+                        </li>
+                        <li>
+                            <iframe width="120" height="80" src="https://www.youtube.com/embed/_MM1MQgFjRM"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <h4>HCV SEA Games 31 khó thoát khỏi tay LMHT Việt Nam</h4>
+                            <p>THỂ THAO</p>
+                        </li>
+                        <li>
+                            <iframe width="120" height="80" src="https://www.youtube.com/embed/_MM1MQgFjRM"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <h4>HCV SEA Games 31 khó thoát khỏi tay LMHT Việt Nam</h4>
+                            <p>THỂ THAO</p>
+                        </li>
+                        <li>
+                            <iframe width="120" height="80" src="https://www.youtube.com/embed/_MM1MQgFjRM"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <h4>HCV SEA Games 31 khó thoát khỏi tay LMHT Việt Nam</h4>
+                            <p>THỂ THAO</p>
+                        </li>
+                        <li>
+                            <iframe width="120" height="80" src="https://www.youtube.com/embed/_MM1MQgFjRM"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <h4>HCV SEA Games 31 khó thoát khỏi tay LMHT Việt Nam</h4>
+                            <p>THỂ THAO</p>
+                        </li>
+                        <li>
+                            <iframe width="120" height="80" src="https://www.youtube.com/embed/_MM1MQgFjRM"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <h4>HCV SEA Games 31 khó thoát khỏi tay LMHT Việt Nam</h4>
+                            <p>THỂ THAO</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+            <div class="footer-above">
+                <div class="promotion">
+                    <h3>Ẩm thực</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/kbd_bcvi/2022_03_27/Claypot_Herbal_Drunken_Prawns.jpg"
+                                alt="">
+                            <p>Món tôm xay ở Trung Quốc</p>
+                        </li>
+                        <li>
+                            <a href="">Công thức salad giàu năng lượng cho tuần mới</a>
+                        </li>
+                        <li>
+                            <a href="">Công thức làm gà hấp nấm với lạp xưởng cho bữa tối</a>
+                        </li>
+                        <li>
+                            <a href="">Món cá hồi áp chảo bổ phổi, dễ làm</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="promotion">
+                    <h3>Ẩm thực</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/kbd_bcvi/2022_03_27/Claypot_Herbal_Drunken_Prawns.jpg"
+                                alt="">
+                            <p>Món tôm xay ở Trung Quốc</p>
+                        </li>
+                        <li>
+                            <a href="">Công thức salad giàu năng lượng cho tuần mới</a>
+                        </li>
+                        <li>
+                            <a href="">Công thức làm gà hấp nấm với lạp xưởng cho bữa tối</a>
+                        </li>
+                        <li>
+                            <a href="">Món cá hồi áp chảo bổ phổi, dễ làm</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="promotion">
+                    <h3>Ẩm thực</h3>
+                    <ul>
+                        <li>
+                            <img src="https://znews-photo.zadn.vn/w210/Uploaded/kbd_bcvi/2022_03_27/Claypot_Herbal_Drunken_Prawns.jpg"
+                                alt="">
+                            <p>Món tôm xay ở Trung Quốc</p>
+                        </li>
+                        <li>
+                            <a href="">Công thức salad giàu năng lượng cho tuần mới</a>
+                        </li>
+                        <li>
+                            <a href="">Công thức làm gà hấp nấm với lạp xưởng cho bữa tối</a>
+                        </li>
+                        <li>
+                            <a href="">Món cá hồi áp chảo bổ phổi, dễ làm</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-below">
+                <div class="info">
+                    <div class="info-left">
+                        <img src="https://static-znews.zadn.vn/images/logo-zing-home.svg" alt="">
+                        <p>
+                            Tạp chí điện tử Tri thức trực tuyến
+                            <br>Cơ quan chủ quản: Hội Xuất bản Việt Nam
+                            <br>Giấy phép báo chí: số 75/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 26/02/2020
+                            <br>Phụ trách điều hành: Nguyễn Nguyên
+                            <br>Tổng thư ký Tòa soạn: Lâm Quang Hiếu
+                            <br>© Toàn bộ bản quyền thuộc Tri thức trực tuyến
+                        </p>
+                    </div>
+                    <div class="info-right">
+                        <p>
+                            Tòa soạn: Tầng 7, D29 Phạm Văn Bạch, Quận Cầu Giấy, Hà Nội
+                            <br>Hotline: 0931.222.666 - Email: toasoan@zing.vn
+                        </p>
+                        <div class="contact">
+                            <p>
+                                <a href="">Liên hệ</a>
+                                <a href="">Tuyển dụng</a>
+                                <a href="">Quảng cáo</a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
